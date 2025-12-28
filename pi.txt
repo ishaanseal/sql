@@ -1,0 +1,28 @@
+with open ("student.dat", "ab") as f:
+    while True:
+        roll = input ()
+        name = input()
+
+        pickle.dump([roll, name], f)
+
+        ans = input ("Add more records? (y/n):  ")
+        if ans.strip().lower() != "y":
+            break
+
+sr = int(input())
+found = False
+
+
+with open ("student.dat", "rb") as f:
+    try:
+        while True:
+            r = pickle.load(f)
+            if r [0] == sr:
+                print("Name: ", r[1])
+                found = True
+                break
+    except EOFError:
+        pass
+
+if not found:
+    print ("Not found")
