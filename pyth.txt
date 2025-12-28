@@ -1,0 +1,36 @@
+stack = []
+while True:
+    print ("---Stack operations--- \n1. PUSH \n2.POP \n3.PEEK \n4.DISPLAY \n5.Exit")
+
+    ch = int(input ("Enter number of desired operation: "))
+
+    if ch == 1:
+        item = input("enter item")
+        stack.append(item)
+        print ("pushed")
+
+    elif ch == 2:
+        if stack == []:
+            print ("stack is empty")
+        else:
+            stack.pop()
+            print ("poped")
+
+    elif ch == 3:
+        if stack == []:
+            print ("stack is empty")
+        else:
+            print(stack[-1])
+            print ("peeked top element")
+
+    elif ch == 4:
+        if stack == []:
+            print ("stack is empty")
+        else:
+            print (stack)
+    elif ch == 5:
+        print ("exiting")
+        break
+
+    else:
+        print("invalid request")
