@@ -1,0 +1,20 @@
+with open ("/Users/ishaanseal/Desktop/file1.txt", "r") as f:
+
+    s = f.read()
+    u = l = v = c = 0
+
+    for i in s:
+        if "A" <= i <= "Z":
+            u +=1
+            if i in "AEIOU":
+                v +=1
+            else:
+                c +=1
+        else:
+            l +=1
+            if i in "aeiou":
+                v +=1
+            else:
+                c +=1
+
+    print ("Number of vowels are: {} \n Number of consonents are: {} \n Number of uppercase letters are: {} \n Number of lowercase letters are: {}".format(v,c,u,l))
