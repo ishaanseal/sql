@@ -1,0 +1,25 @@
+SET – B, C
+a) To display details of all employees in descending order of their DOJ
+SELECT * FROM EMPLOYEE ORDER BY DOJ DESC;
+
+b) To display name and designation of employees whose sgrade is either ‘S02’ or ‘S03’
+SELECT NAME, DESIG FROM EMPLOYEE WHERE SGRADE IN ('S02','S03');
+
+c) To display number of employees working in each salgrade
+SELECT SGRADE, COUNT(*) FROM EMPLOYEE GROUP BY SGRADE;
+
+d) To display name, designation, salary and HRA where salary is less than 50000
+SELECT E.NAME, E.DESIG, E.SALARY, S.HRA FROM EMPLOYEE E JOIN SALGRADE S ON E.SGRADE=S.SGRADE WHERE E.SALARY<50000;
+
+SET – A, D
+a) To display details of all transactions of type withdraw
+SELECT * FROM TRANSACT WHERE TYPE='Withdraw';
+
+b) To display account number and amount of all transactions done in the month of May 2017
+SELECT ANO, AMOUNT FROM TRANSACT WHERE DOT BETWEEN '2017-05-01' AND '2017-05-31';
+
+c) To display first date of transaction (DOT) for account having account number 102
+SELECT MIN(DOT) FROM TRANSACT WHERE ANO=102;
+
+d) To display account number, account name, amount and date of transaction for transactions less than or equal to 3000
+SELECT A.ANO, A.ANAME, T.AMOUNT, T.DOT FROM ACCOUNT A JOIN TRANSACT T ON A.ANO=T.ANO WHERE T.AMOUNT<=3000;
